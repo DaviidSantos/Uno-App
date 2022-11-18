@@ -23,7 +23,7 @@
 .navbar__container-links .nav-item{
     padding: 30px 20px;
     margin: 0 20px;
-    font-size: 18px;
+    font-size: 16px;
     font-family: var(--font-family);
     font-weight: 600;
     color: var(--primary-color);
