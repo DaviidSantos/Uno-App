@@ -1,0 +1,31 @@
+.navbar{
+    padding: 20px 100px;
+    border-bottom: 1px solid #BFC0C0;
+}
+
+.navbar__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar__container-logo{
+    display: flex;
+    flex: 1;
+    align-items: center;
+}
+
+.navbar__container-links{
+    display: flex;
+    align-items: center;
+}
+
+.navbar__container-links a{
+    padding: 0 20px;
+    margin: 0 20px;
+    font-size: 18px;
+    font-family: var(--font-family);
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
