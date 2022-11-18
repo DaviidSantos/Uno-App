@@ -1,5 +1,5 @@
 .navbar{
-    padding: 20px 100px;
+    padding: 15px 100px;
     border-bottom: 1px solid #BFC0C0;
 }
 
@@ -20,12 +20,13 @@
     align-items: center;
 }
 
-.navbar__container-links a{
-    padding: 0 20px;
+.navbar__container-links .nav-item{
+    padding: 30px 20px;
     margin: 0 20px;
     font-size: 18px;
     font-family: var(--font-family);
     font-weight: 600;
     color: var(--primary-color);
+    cursor: pointer;
 }
 

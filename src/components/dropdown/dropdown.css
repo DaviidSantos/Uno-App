@@ -1,0 +1,37 @@
+.solicitante__submenu{
+    position: absolute;
+    top: 73px;
+    right: 537px;
+    background: var(--primary-color);
+}
+
+.sa__submenu{
+    position: absolute;
+    top: 73px;
+    width: 200px;
+    right: 287px;
+    background: var(--primary-color);
+}
+
+.amostra__submenu{
+    position: absolute;
+    top: 73px;
+    right: 105px;
+    background: var(--primary-color);
+}
+
+
+#submenu-item{
+    padding: 16px 20px 16px 20px ;
+    text-align: center;
+    margin: 0 20px;
+    display: block;
+    font-size: 14px;
+    font-weight: 400;
+    color: #FFF;
+    font-family: var(--font-family);
+}
+
+.clicked{
+    display: none;
+}
