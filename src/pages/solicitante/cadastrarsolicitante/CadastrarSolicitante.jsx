@@ -19,7 +19,6 @@ const CadastrarSolicitante = () => {
 
     const onSubmit = async (e) => {
         e.preventDefault()
-        setErrorModal(true)
         await axios.post('http://localhost:8080/solicitante', solicitante)
         navigate('/consultar-solicitantes')
     }

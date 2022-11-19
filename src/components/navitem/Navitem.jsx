@@ -29,7 +29,7 @@ export const navItems = [
     {
       id: 2,
       title: "Consultar",
-      path: "./consultar-solicitante",
+      path: "./consultar-solicitantes",
       cName: "submenu-item",
     }
   ];
