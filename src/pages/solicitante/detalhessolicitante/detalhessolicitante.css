@@ -1,0 +1,70 @@
+.detalhessolicitante__container{
+    padding: 40px 100px;
+    font-family: var(--font-family);
+}
+
+.detalhessolicitante__container > h2{
+    font-size: 32px;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+}
+
+.detalhessolicitante__detalhes{
+    display: flex;
+    flex-wrap: wrap;
+    width: 60%;
+    margin: 0 auto 40px auto;
+}
+
+.datalhessolicitante__dados{
+    width: 40%;
+    margin: 20px auto;
+
+}
+
+.datalhessolicitante__dados h3{
+    color: var(--primary-color);
+}
+
+.datalhessolicitante__dados p{
+    color: var(--secondary-color);
+}
+
+.solicitacoesdeanalise__container-cards{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.solicitacaodeanalise__cards{
+    border-radius: 5px;
+    box-shadow: 7px 7px 13px 0px rgba(50, 50, 50, 0.25);
+    padding: 30px;
+    margin: 20px 35px 30px 0;
+    width: 252px;
+    height: 200px;
+    transition: all 0.3s ease-out;
+    background: var(--secondary-color);
+    color: #FFF;
+}
+
+.solicitacaodeanalise__cards:hover{
+    transform: translateY(-5px);
+    cursor: pointer;
+}
+
+.solicitacaodeanalise__cards h3{
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.solicitacaodeanalise__cards h2{
+    font-size: 32px;
+    margin-top: 15px;
+}
+
+.solicitacaodeanalise__cards p{
+    position: relative;
+    bottom: -45px;
+    font-weight: bold;
+    font-size: 18px;
+}

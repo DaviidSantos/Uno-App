@@ -1,33 +1,20 @@
 import axios from 'axios'
 import React, { useState, useEffect } from 'react'
-import { Link, useParams} from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import './consultarsolicitantes.css'
 
 const ConsultarSolicitantes = () => {
-    const [solicitantes, setSolicitantes] = useState(
-        [{
-            cnpj: '',
-            nomeSolicitante: '',
-            cep: '',
-            endereco: '',
-            cidade: '',
-            estado: '',
-            emailComercial: '',
-            telefoneComercial: ''
-        }]
-    )
+    const [solicitantes, setSolicitantes] = useState([])
 
-    const loadSolicitantes = async () =>{
+    const loadSolicitantes = async () => {
         const result = await axios.get('http://localhost:8080/solicitante')
         setSolicitantes(result.data)
     }
 
-    const {id} = useParams()
-
     useEffect(() => {
-      loadSolicitantes()
+        loadSolicitantes()
     },[])
-    
+
 
     return (
         <div className='consultarsolicitantes__container'>
