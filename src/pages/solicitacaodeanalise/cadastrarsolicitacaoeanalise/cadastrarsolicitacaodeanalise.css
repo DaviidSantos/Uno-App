@@ -1,0 +1,45 @@
+.cadastrarsolicitacaodeanalise__container {
+    padding: 40px 100px;
+    font-family: var(--font-family);
+}
+
+.cadastrarsolicitacaodeanalise__container > h2{
+    font-size: 32px;
+    color: var(--primary-color);
+}
+
+.cadastrarsolicitacaodeanalise__container > h3{
+    font-family: var(--font-family);
+    color: var(--secondary-color);
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.cadastrarsolicitacaodeanalise__form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.cadastrarsolicitacaodeanalise__form-input{
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+    margin: 25px 0;
+}
+
+.cadastrarsolicitacaodeanalise__form-input input{
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid var(--secondary-color);
+    outline: none;
+}
+
+textarea{
+    resize: none;
+    border-radius: 8px;
+    border: 1px solid var(--secondary-color);
+    outline: none;
+    font-size: 16px;
+    font-family: var(--font-family);
+}

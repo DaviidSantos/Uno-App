@@ -18,12 +18,13 @@
 .cadastrarsolicitante__form {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .cadastrarsolicitante__form-input {
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 48%;
     margin: 25px 0;
 }
 
@@ -41,15 +42,6 @@
     border-radius: 8px;
     color: var(--secondary-color);
 }
-
-.left{
-    margin: 0 20px 0 0;
-}
-
-.right{
-    margin: 0 0 0 20px;
-}
-
 
 button{
     display: block;
