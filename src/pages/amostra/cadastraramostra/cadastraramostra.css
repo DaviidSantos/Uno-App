@@ -1,0 +1,42 @@
+.cadastraramostra__container{
+    padding: 40px 100px;
+    font-family: var(--font-family);
+}
+
+.cadastraramostra__container > h2{
+    font-size: 32px;
+    color: var(--primary-color);
+}
+
+.cadastraramostra__container > h3{
+    color: var(--secondary-color);
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.cadastraramostra__form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.cadastraramostra__form-input{
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+    margin: 25px 0;
+}
+
+.cadastraramostra__form-input input{
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid var(--secondary-color);
+}
+
+.cadastraramostra__form-input label{
+    color: var(--primary-color);
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+}
