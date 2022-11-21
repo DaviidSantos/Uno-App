@@ -6,6 +6,7 @@ import CadastrarSolicitante from './pages/solicitante/cadastrarsolicitante/Cadas
 import ConsultarSolicitantes from './pages/solicitante/consultarsolicitantes/ConsultarSolicitantes'
 import DetalheSolicitante from './pages/solicitante/detalhessolicitante/DetalheSolicitante'
 import CadastrarSolicitacaoDeAnalise from './pages/solicitacaodeanalise/cadastrarsolicitacaoeanalise/CadastrarSolicitacaoDeAnalise'
+import ConsultarSolicitacaoDeAnalise from './pages/solicitacaodeanalise/consultarsolicitacaodeanalise/ConsultarSolicitacaoDeAnalise'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route exact path='/consultar-solicitantes' element={<ConsultarSolicitantes/>}/>
           <Route exact path='/consultar-solicitantes/:cnpj' element={<DetalheSolicitante/>}/>
           <Route exact path='/cadastrar-solicitacao-de-analise' element={<CadastrarSolicitacaoDeAnalise/>}/>
+          <Route exact path='/consultar-solicitacao-de-analise' element={<ConsultarSolicitacaoDeAnalise/>}/>
         </Routes>
       </Router>
     </div>
