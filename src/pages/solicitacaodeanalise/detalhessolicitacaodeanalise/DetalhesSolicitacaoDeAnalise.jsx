@@ -59,6 +59,7 @@ const DetalhesSolicitacaoDeAnalise = () => {
                             <div className="card__content">
                                 <h3>{amostra.idAmostra}</h3>
                                 <h2>{amostra.solicitacaoDeAnalise.solicitante.nomeSolicitante}</h2>
+                                <p>{amostra.tipo}</p>
                             </div>
                         </Link>
                     ))

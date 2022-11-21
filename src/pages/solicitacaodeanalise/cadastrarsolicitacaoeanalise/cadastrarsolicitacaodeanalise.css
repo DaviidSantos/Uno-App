@@ -9,7 +9,6 @@
 }
 
 .cadastrarsolicitacaodeanalise__container > h3{
-    font-family: var(--font-family);
     color: var(--secondary-color);
     font-weight: 400;
     font-size: 16px;
@@ -33,6 +32,14 @@
     border-radius: 8px;
     border: 1px solid var(--secondary-color);
     outline: none;
+}
+
+.cadastrarsolicitacaodeanalise__form-input label{
+    color: var(--primary-color);
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
 }
 
 textarea{

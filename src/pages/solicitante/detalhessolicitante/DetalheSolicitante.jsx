@@ -77,7 +77,7 @@ const DetalheSolicitante = () => {
             <div className="solicitacoesdeanalise__container-cards">
                 {
                     solicitacoesDeAnalise.map((solicitacaoDeAnalise) => (
-                        <Link to={`/consultar-solicitacoes-de-analise/${solicitacaoDeAnalise.idSA}`} className="solicitacaodeanalise__cards">
+                        <Link to={`/consultar-solicitacao-de-analise/${solicitacaoDeAnalise.idSA}`} className="solicitacaodeanalise__cards">
                             <div className="card__content">
                                 <h3>{solicitacaoDeAnalise.idSA}</h3>
                                 <h2>{solicitacaoDeAnalise.solicitante.nomeSolicitante}</h2>
