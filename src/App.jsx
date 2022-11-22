@@ -10,6 +10,7 @@ import ConsultarSolicitacaoDeAnalise from './pages/solicitacaodeanalise/consulta
 import DetalhesSolicitacaoDeAnalise from './pages/solicitacaodeanalise/detalhessolicitacaodeanalise/DetalhesSolicitacaoDeAnalise'
 import CadastrarAmostra from './pages/amostra/cadastraramostra/CadastrarAmostra'
 import ConsultarAmostra from './pages/amostra/consultaramostra/ConsultarAmostra'
+import DetalhesAmostra from './pages/amostra/detalhesamostra/DetalhesAmostra'
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route exact path='/consultar-solicitacao-de-analise/:idSA' element={<DetalhesSolicitacaoDeAnalise/>}/>
           <Route exact path='/cadastrar-amostra' element={<CadastrarAmostra/>}/>
           <Route exact path='/consultar-amostra' element={<ConsultarAmostra/>}/>
+          <Route exact path='/consultar-amostra/:idAmostra' element={<DetalhesAmostra/>}/>
         </Routes>
       </Router>
     </div>

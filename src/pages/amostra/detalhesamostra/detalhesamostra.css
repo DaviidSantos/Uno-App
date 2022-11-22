@@ -1,0 +1,112 @@
+.detalhesamostra__container {
+    padding: 40px 100px;
+    font-family: var(--font-family);
+}
+
+.detalhesamostra__container>h2 {
+    font-size: 32px;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+}
+
+.detalhesamostra__container-dados {
+    display: flex;
+    flex-wrap: wrap;
+    width: 60%;
+    margin: 0 auto 40px auto;
+}
+
+.detalhesamostra__container-dados_item {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin: 20px auto;
+}
+
+.detalhesamostra__container-dados_item h3 {
+    color: var(--primary-color);
+}
+
+.detalhesamostra__container-dados_item p {
+    color: var(--secondary-color);
+}
+
+
+.ensaios__container-cards {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.ensaios__cards {
+    border-radius: 5px;
+    box-shadow: 7px 7px 13px 0px rgba(50, 50, 50, 0.25);
+    padding: 30px;
+    margin: 20px 35px 30px 0;
+    width: 252px;
+    height: 200px;
+    transition: all 0.3s ease-out;
+    background: var(--secondary-color);
+    color: #FFF;
+}
+
+.ensaios__cards:hover {
+    transform: translateY(-5px);
+    cursor: pointer;
+}
+
+.ensaios__cards h2 {
+    font-size: 32px;
+    margin-top: 15px;
+}
+
+.ensaios__cards>p {
+    position: relative;
+    bottom: -30px;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.ensaios__cards h3 {
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.card__content-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card__content-top p:hover {
+    color: #EF8354;
+}
+
+.modal-h2{
+    font-family: var(--font-family);
+    text-transform: capitalize;
+    color: var(--primary-color);
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.resultado-input{
+    display: flex;
+    flex-direction: column;
+}
+
+.resultado-input label{
+    font-family: var(--font-family);
+    color: var(--secondary-color);
+    font-weight: 500;
+}
+
+.resultado-input input{
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid var(--secondary-color);
+    margin-bottom: 50px;
+}
+
+.cadastrarresultado:hover{
+    background: var(--secondary-color);
+}
