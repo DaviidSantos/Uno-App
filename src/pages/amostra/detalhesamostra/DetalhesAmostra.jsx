@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import './detalhesamostra.css'
 import Modal from 'react-modal'
+import Select from 'react-select'
 
 Modal.setAppElement('#root')
 
@@ -11,12 +12,16 @@ const DetalhesAmostra = () => {
 
     const [amostra, setAmostra] = useState({})
     const [ensaioSelecionado, setEnsaioSelecionado] = useState()
-    const [resultadoEnsaio, setResultadoEnsaio] = useState(
+    const [resultadoEnsaio, setResultadoEnsaio] = useState()
+    const [cadastrarResultadoEnsaioModal, setCadastrarResultadoEnsaioModal] = useState(false)
+    const [cadastrarEnsaioModal, setCadastrarEnsaioModal] = useState(false)
+    const [ensaio, setEnsaio] = useState(
         {
-            resultadoDoEnsaio: ''
+            idAmostra: '',
+            nomeEnsaio: '',
+            especificacao: ''
         }
     )
-    const [cadastrarResultadoEnsaioModal, setCadastrarResultadoEnsaioModal] = useState(false)
 
     const loadAmostra = async () => {
         const result = await axios.get(`http://localhost:8080/amostra/${idAmostra}`)
@@ -30,8 +35,19 @@ const DetalhesAmostra = () => {
         closeCadastrarResultadoEnsaioModal()
     }
 
+    const cadastrarEnsaio = async (e) => {
+        e.preventDefault()
+        await axios.post('http://localhost:8080/ensaio', ensaio)
+        loadAmostra()
+        openCloseCadastrarEnsaioModal()
+    }
+
     const resultadoEnsaioInputChange = (e) => {
-        setResultadoEnsaio({...ensaioSelecionado, [e.target.name]: e.target.value})
+        setResultadoEnsaio({ ...ensaioSelecionado, [e.target.name]: e.target.value })
+    }
+    
+    const cadastroEnsaioInputChange = (e) => {
+        setEnsaio({...ensaio, [e.target.name]: e.target.value})
     }
 
     const openCadastrarResultadoEnsaioModal = React.useCallback((id) => () => {
@@ -43,9 +59,31 @@ const DetalhesAmostra = () => {
         setCadastrarResultadoEnsaioModal(false)
     }
 
+    const openCloseCadastrarEnsaioModal = () => {
+        setCadastrarEnsaioModal(!cadastrarEnsaioModal)
+    }
+
     useEffect(() => {
         loadAmostra()
+        setEnsaio({ ...ensaio, idAmostra: idAmostra })
     }, [])
+
+
+    const options = [
+        { value: 'Desintegração', label: 'Desintegração' },
+        { value: 'Dissolução', label: 'Dissolução' },
+        { value: 'pH', label: 'pH' },
+        { value: 'Dureza', label: 'Dureza' },
+        { value: 'Friabilidade', label: 'Friabilidade' },
+        { value: 'Umidade', label: 'Umidade' },
+        { value: 'Viscosidade', label: 'Viscosidade' },
+        { value: 'Solubilidade', label: 'Solubilidade' },
+        { value: 'Teor do Ativo', label: 'Teor Do Ativo' },
+        { value: 'Teor de Impurezas', label: 'Teor de Impurezas' },
+        { value: 'Particulas Visíveis', label: 'Particulas Visíveis' },
+        { value: 'Peso Médio', label: 'Peso Médio' },
+        { value: 'Karl Fischer', label: 'Karl Fischer' }
+    ]
 
     const cadastrarResultadoEnsaioModalStyles = {
         content: {
@@ -54,6 +92,16 @@ const DetalhesAmostra = () => {
             left: '30%',
             right: '27%',
             bottom: '30%'
+        }
+    }
+
+    const cadastrarEnsaioModalStyles = {
+        content: {
+            background: '#F6F6F6',
+            top: '20%',
+            left: '20%',
+            right: '20%',
+            bottom: '25%'
         }
     }
 
@@ -121,7 +169,7 @@ const DetalhesAmostra = () => {
                                 </div>
                             )
                         }
-                        
+
                         return (
                             <div className="ensaios__cards" key={ensaio.id}>
                                 <div className="card__content">
@@ -135,7 +183,7 @@ const DetalhesAmostra = () => {
                                 </div>
                             </div>
                         )
-                        
+
                     })
                 }
             </div>
@@ -147,10 +195,30 @@ const DetalhesAmostra = () => {
                         <label htmlFor="resultadoDoEnsaio">
                             Resultado
                         </label>
-                        <input type="text" tabIndex={1} className='form-control' placeholder='Informe o resultado do ensaio' name='resultadoDoEnsaio' onChange={(e) => resultadoEnsaioInputChange(e)}/>
+                        <input type="text" tabIndex={1} className='form-control' placeholder='Informe o resultado do ensaio' name='resultadoDoEnsaio' onChange={(e) => resultadoEnsaioInputChange(e)} />
                     </div>
                     <button className='cadastrarresultado'>Cadastrar</button>
                 </form>
+            </Modal>
+
+            <button onClick={openCloseCadastrarEnsaioModal}>Cadastrar Ensaio</button>
+            <Modal style={cadastrarEnsaioModalStyles} isOpen={cadastrarEnsaioModal} onRequestClose={openCloseCadastrarEnsaioModal}>
+                <div className="cadastrarensaio__container">
+                    <h2>Cadastrar Ensaio</h2>
+                    <form onSubmit={(e) => cadastrarEnsaio(e)} className='cadastrarensaio__container-form'>
+                        <div className="cadastrarensaio__container-form_input">
+                            <label htmlFor="nomeEnsaio">Ensaio</label>
+                            <Select className='select' options={options} onChange={(selecionarEnsaio) => setEnsaio({ ...ensaio, nomeEnsaio: selecionarEnsaio.value })}/>
+                        </div>
+
+                        <div className="cadastrarensaio__container-form_input">
+                            <label htmlFor="especificacao">Especificação</label>
+                            <input type="text" name='especificacao' onChange={(e) => cadastroEnsaioInputChange(e)}/>
+                        </div>
+
+                        <button>Cadastrar</button>
+                    </form>
+                </div>
             </Modal>
         </div>
     )

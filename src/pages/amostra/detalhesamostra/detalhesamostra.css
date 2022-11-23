@@ -110,3 +110,48 @@
 .cadastrarresultado:hover{
     background: var(--secondary-color);
 }
+
+.cadastrarensaio__container{
+    padding: 20px;
+}
+
+.cadastrarensaio__container h2{
+    font-size: 32px;
+    font-family: var(--font-family);
+    color: var(--primary-color);
+    margin-bottom: 30px;
+}
+
+.cadastrarensaio__container-form{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cadastrarensaio__container-form_input{
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+    margin-bottom: 40px;
+}
+
+.cadastrarensaio__container-form_input input{
+    padding: 10px;
+}
+
+.cadastrarensaio__container-form_input label{
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--secondary-color);
+}
+
+.select{
+    font-family: var(--font-family);
+    color: var(--secondary-color);
+}
+
+button:hover{
+    background: var(--secondary-color);
+}
