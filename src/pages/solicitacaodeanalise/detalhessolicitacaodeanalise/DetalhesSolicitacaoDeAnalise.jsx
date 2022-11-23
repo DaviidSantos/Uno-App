@@ -55,7 +55,7 @@ const DetalhesSolicitacaoDeAnalise = () => {
             <div className="amostras__container-cards">
                 {
                     amostras.map((amostra) => (
-                        <Link to={`/consultar-amostras/${amostra.idAmostra}`} className="amostras__cards">
+                        <Link to={`/consultar-amostra/${amostra.idAmostra}`} className="amostras__cards">
                             <div className="card__content">
                                 <h3>{amostra.idAmostra}</h3>
                                 <h2>{amostra.solicitacaoDeAnalise.solicitante.nomeSolicitante}</h2>
