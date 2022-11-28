@@ -32,9 +32,9 @@ const ConsultarAmostra = () => {
                         amostras.map((amostra) => (
                             <Link to={`/consultar-amostra/${amostra.idAmostra}`} key={amostra.idAmostra} className="consultaramostra__cards">
                                 <div className="card__content">
-                                    <h3>{amostra.solicitacaoDeAnalise.idSA}</h3>
-                                    <h2>{amostra.idAmostra}</h2>
-                                    <p>Detalhes</p>
+                                    <h3>{amostra.idAmostra}</h3>
+                                    <h2>{amostra.nomeAmostra}</h2>
+                                    <p>{amostra.solicitacaoDeAnalise.idSA}</p>
                                 </div>
                             </Link>
                         ))
