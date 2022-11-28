@@ -1,0 +1,79 @@
+.login__container{
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    font-family: var(--font-family);
+}
+
+.login__container-bg{
+    width: 50%;
+    background: url("../../assets/Bg.svg") no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+     background-size: cover;
+}
+
+.login__container-form{
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login__container-form_main{
+    margin: 0 auto;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login__container-form_main img{
+    margin-bottom: 45px;
+}
+
+.login__container-form_main h1{
+    color: var(--primary-color);
+}
+
+.login__container-form_main p{
+    margin-bottom: 30px;
+    color: var(--secondary-color);
+    font-weight: 500;
+}
+
+.login__form{
+    width: 100%;
+}
+
+.login__form-dados{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.login__form-dados label{
+    color: var(--secondary-color);
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.login__form-dados input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--secondary-color);
+    border-radius: 8px;
+}
+
+.login__form-dados input::placeholder{
+    color: var(--secondary-color);
+    font-family: var(--font-family);
+}
+
+.login__container button{
+    width: 100%;
+}

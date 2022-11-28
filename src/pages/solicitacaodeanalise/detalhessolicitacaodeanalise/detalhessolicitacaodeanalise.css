@@ -30,6 +30,7 @@
 .amostras__container-cards{
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 35px;
 }
 
 .amostras__cards{

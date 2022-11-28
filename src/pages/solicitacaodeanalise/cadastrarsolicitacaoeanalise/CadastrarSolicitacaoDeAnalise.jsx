@@ -3,9 +3,16 @@ import './cadastrarsolicitacaodeanalise.css'
 import Select from 'react-select'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import Navbar from '../../../components/navbar/Navbar'
 
 const CadastrarSolicitacaoDeAnalise = () => {
     let navigate = useNavigate()
+
+    const token = window.localStorage.getItem('token');
+
+    const config = {
+        headers: { Authorization: `Bearer ${token}` }
+    };
 
     const [solicitacaoDeAnalise, setSolicitacaoDeAnalise] = useState({
         cnpj: '',
@@ -25,43 +32,47 @@ const CadastrarSolicitacaoDeAnalise = () => {
     ]
 
     const onInputChange = (e) => {
-        setSolicitacaoDeAnalise({...solicitacaoDeAnalise, [e.target.name]: e.target.value})
+        setSolicitacaoDeAnalise({ ...solicitacaoDeAnalise, [e.target.name]: e.target.value })
     }
 
     const onSubmit = async (e) => {
         e.preventDefault()
-        await axios.post('http://localhost:8080/solicitacao-de-analise', solicitacaoDeAnalise)
+        await axios.post('http://localhost:8080/solicitacao-de-analise', solicitacaoDeAnalise, config)
         navigate('/consultar-solicitacao-de-analise')
     }
 
     return (
-        <div className='cadastrarsolicitacaodeanalise__container'>
-            <h2>Cadastrar Solicitação de Análise</h2>
-            <h3>Informe abaixo os dados da Solicitação de Análise</h3>
-            <form onSubmit={(e) => onSubmit(e)} className="cadastrarsolicitacaodeanalise__form">
-                <div className="cadastrarsolicitacaodeanalise__form-input">
-                    <label htmlFor="cnpj">CNPJ do Solicitante</label>
-                    <input type="text" name='cnpj' onChange={(e) => onInputChange(e)}/>
-                </div>
+        <>
+            <Navbar />
+            <div className='cadastrarsolicitacaodeanalise__container'>
+                <h2>Cadastrar Solicitação de Análise</h2>
+                <h3>Informe abaixo os dados da Solicitação de Análise</h3>
+                <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
+                <form onSubmit={(e) => onSubmit(e)} className="cadastrarsolicitacaodeanalise__form">
+                    <div className="cadastrarsolicitacaodeanalise__form-input">
+                        <label htmlFor="cnpj">CNPJ do Solicitante</label>
+                        <input type="text" name='cnpj' onChange={(e) => onInputChange(e)} />
+                    </div>
 
-                <div className="cadastrarsolicitacaodeanalise__form-input">
-                    <label htmlFor="tipoDeAnalise">Tipo de Análise</label>
-                    <Select type="text" name='tipoDeAnalise' options={options} placeholder="Tipo de Análise" onChange={(selecionarTipoDeAnalise) => setSolicitacaoDeAnalise({...solicitacaoDeAnalise, 'tipoDeAnalise': selecionarTipoDeAnalise.value})}/>
-                </div>
+                    <div className="cadastrarsolicitacaodeanalise__form-input">
+                        <label htmlFor="tipoDeAnalise">Tipo de Análise</label>
+                        <Select type="text" name='tipoDeAnalise' options={options} placeholder="Tipo de Análise" onChange={(selecionarTipoDeAnalise) => setSolicitacaoDeAnalise({ ...solicitacaoDeAnalise, 'tipoDeAnalise': selecionarTipoDeAnalise.value })} />
+                    </div>
 
-                <div className="cadastrarsolicitacaodeanalise__form-input">
-                    <label htmlFor="consideracoesGerais">Considerações Gerais</label>
-                    <textarea name="consideracoesGerais" id="" cols="70" rows="10" onChange={(e) => onInputChange(e)}/>
-                </div>
+                    <div className="cadastrarsolicitacaodeanalise__form-input">
+                        <label htmlFor="consideracoesGerais">Considerações Gerais</label>
+                        <textarea name="consideracoesGerais" id="" cols="70" rows="10" onChange={(e) => onInputChange(e)} />
+                    </div>
 
-                <div className="cadastrarsolicitacaodeanalise__form-input">
-                    <label htmlFor="informacoesAdicionais">Informações Adicionais</label>
-                    <textarea name="informacoesAdicionais" id="" cols="70" rows="10" onChange={(e) => onInputChange(e)}/>
-                </div>
+                    <div className="cadastrarsolicitacaodeanalise__form-input">
+                        <label htmlFor="informacoesAdicionais">Informações Adicionais</label>
+                        <textarea name="informacoesAdicionais" id="" cols="70" rows="10" onChange={(e) => onInputChange(e)} />
+                    </div>
 
-                <button type='submit'>Cadastrar</button>
-            </form>
-        </div>
+                    <button type='submit'>Cadastrar</button>
+                </form>
+            </div>
+        </>
     )
 }
 

@@ -1,13 +1,20 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import Navbar from '../../../components/navbar/Navbar'
 import './consultaramostra.css'
 
 const ConsultarAmostra = () => {
+    const token = window.localStorage.getItem('token');
+
+    const config = {
+        headers: { Authorization: `Bearer ${token}` }
+    };
+
     const [amostras, setAmostras] = useState([])
 
     const loadAmostras = async () => {
-        const result = await axios.get('http://localhost:8080/amostra')
+        const result = await axios.get('http://localhost:8080/amostra', config)
         setAmostras(result.data)
     }
 
@@ -16,22 +23,25 @@ const ConsultarAmostra = () => {
     }, [])
 
     return (
-        <div className='consultaramostras__container'>
-            <h2>Amostras</h2>
-            <div className="consultaramostras__container-cards">
-                {
-                    amostras.map((amostra) => (
-                        <Link to={`/consultar-amostra/${amostra.idAmostra}`} key={amostra.idAmostra} className="consultaramostra__cards">
-                            <div className="card__content">
-                                <h3>{amostra.solicitacaoDeAnalise.idSA}</h3>
-                                <h2>{amostra.idAmostra}</h2>
-                                <p>Detalhes</p>
-                            </div>
-                        </Link>
-                    ))
-                }
+        <>
+            <Navbar />
+            <div className='consultaramostras__container'>
+                <h2>Amostras</h2>
+                <div className="consultaramostras__container-cards">
+                    {
+                        amostras.map((amostra) => (
+                            <Link to={`/consultar-amostra/${amostra.idAmostra}`} key={amostra.idAmostra} className="consultaramostra__cards">
+                                <div className="card__content">
+                                    <h3>{amostra.solicitacaoDeAnalise.idSA}</h3>
+                                    <h2>{amostra.idAmostra}</h2>
+                                    <p>Detalhes</p>
+                                </div>
+                            </Link>
+                        ))
+                    }
+                </div>
             </div>
-        </div>
+        </>
     )
 }
 

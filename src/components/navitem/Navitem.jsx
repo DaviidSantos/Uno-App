@@ -2,34 +2,40 @@ export const navItems = [
     {
       id: 1,
       title: "Solicitante",
-      path: "./solicitante",
+      path: "../solicitante",
       cName: "nav-item",
     },
     {
       id: 2,
       title: "Solicitação de Análise",
-      path: "./solicitacao-de-analise",
+      path: "../solicitacao-de-analise",
       cName: "nav-item",
     },
     {
       id: 3,
       title: "Amostra",
-      path: "./amostra",
+      path: "../amostra",
       cName: "nav-item",
     },
+    {
+      id: 4,
+      title: "Usuário",
+      path: "usuario",
+      cName: "nav-item"
+    }
   ];
   
   export const solicitanteDropdown = [
     {
       id: 1,
       title: "Cadastrar",
-      path: "./cadastrar-solicitante",
+      path: "../cadastrar-solicitante",
       cName: "submenu-item",
     },
     {
       id: 2,
       title: "Consultar",
-      path: "./consultar-solicitantes",
+      path: "../consultar-solicitantes",
       cName: "submenu-item",
     }
   ];
@@ -38,13 +44,13 @@ export const navItems = [
     {
       id: 1,
       title: "Cadastrar",
-      path: "./cadastrar-solicitacao-de-analise",
+      path: "../cadastrar-solicitacao-de-analise",
       cName: "submenu-item",
     },
     {
       id: 2,
       title: "Consultar",
-      path: "./consultar-solicitacao-de-analise",
+      path: "../consultar-solicitacao-de-analise",
       cName: "submenu-item",
     }
   ];
@@ -53,13 +59,22 @@ export const navItems = [
     {
       id: 1,
       title: "Cadastrar",
-      path: "./cadastrar-amostra",
+      path: "../cadastrar-amostra",
       cName: "submenu-item",
     },
     {
       id: 2,
       title: "Consultar",
-      path: "./consultar-amostra",
+      path: "../consultar-amostra",
       cName: "submenu-item",
     }
   ];
+  
+  export const usuarioDropdown = [
+    {
+      id: 1,
+      title: "Cadastrar",
+      path: "../cadastrar-usuario",
+      cName: "submenu-item",
+    },
+  ]

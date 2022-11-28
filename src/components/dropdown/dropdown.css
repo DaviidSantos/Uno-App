@@ -1,7 +1,7 @@
 .solicitante__submenu{
     position: absolute;
     top: 73px;
-    right: 500px;
+    right: 640px;
     background: var(--primary-color);
 }
 
@@ -9,14 +9,21 @@
     position: absolute;
     top: 73px;
     width: 200px;
-    right: 267px;
+    right: 412px;
     background: var(--primary-color);
 }
 
 .amostra__submenu{
     position: absolute;
     top: 73px;
-    right: 101px;
+    right: 242px;
+    background: var(--primary-color);
+}
+
+.usuario__submenu{
+    position: absolute;
+    top: 73px;
+    right: 100px;
     background: var(--primary-color);
 }
 

@@ -12,7 +12,7 @@
 .detalhesamostra__container-dados {
     display: flex;
     flex-wrap: wrap;
-    width: 60%;
+    width: 50%;
     margin: 0 auto 40px auto;
 }
 
@@ -154,4 +154,33 @@
 
 button:hover{
     background: var(--secondary-color);
+}
+
+.buttons{
+    display: flex;
+    margin: 30px 40px;
+}
+
+.statusamostra__container{
+    padding: 20px;
+}
+
+.statusamostra__container h2{
+    font-size: 32px;
+    font-family: var(--font-family);
+    color: var(--primary-color);
+    margin-bottom: 30px;
+}
+
+.statusamostra__container-form_input{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+}
+
+.statusamostra__container-form_input label{
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--secondary-color);
 }

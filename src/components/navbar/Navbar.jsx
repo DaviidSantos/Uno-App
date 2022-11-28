@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './navbar.css'
 import logo from '../../assets/Logo.svg'
-import { navItems, solicitanteDropdown, solicitacaoDeAnaliseDropdown, amostraDropdown} from '../navitem/Navitem'
+import { navItems, solicitanteDropdown, solicitacaoDeAnaliseDropdown, amostraDropdown, usuarioDropdown} from '../navitem/Navitem'
 import { Link } from 'react-router-dom'
 import Dropdown from '../dropdown/Dropdown'
 
@@ -11,6 +11,7 @@ const Navbar = () => {
     const [dropdownSolicitante, setDropdownSolicitante] = useState(false)
     const [dropdownSA, setDropdownSA] = useState(false)
     const [dropdownAmostra, setDropdownAmostra] = useState(false)
+    const [dropdownUsuario, setDropdownUsuario] = useState(false)
 
     let solicitante_submenu ={
         submenu_items: solicitanteDropdown,
@@ -28,6 +29,12 @@ const Navbar = () => {
         submenu_items: amostraDropdown,
         container_name: 'amostra__submenu scale-up-center',
         container_name_click: 'amostra__submenu scale-up-center clicked'
+    }
+
+    let usuario_submenu ={
+        submenu_items: usuarioDropdown,
+        container_name: 'usuario__submenu scale-up-center',
+        container_name_click: 'usuario__submenu scale-up-center clicked'
     }
 
     return (
@@ -62,6 +69,15 @@ const Navbar = () => {
                                     <div className="navbar__container-links_item" key={navItem.id} onMouseEnter={() => setDropdownAmostra(true)} onMouseLeave={() => setDropdownAmostra(false)}>
                                         <span className={navItem.cName}>{navItem.title}</span>
                                         {dropdownAmostra && <Dropdown dropdownItems={amostra_submenu}/>}
+                                    </div>
+                                )
+                            }
+
+                            if(navItem.title === 'Usuário'){
+                                return(
+                                    <div className="navbar__container-links_item" key={navItem.id} onMouseEnter={() => setDropdownUsuario(true)} onMouseLeave={() => setDropdownUsuario(false)}>
+                                        <span className={navItem.cName}>{navItem.title}</span>
+                                        {dropdownUsuario && <Dropdown dropdownItems={usuario_submenu}/>}
                                     </div>
                                 )
                             }
