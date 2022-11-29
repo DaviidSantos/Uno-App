@@ -75,7 +75,6 @@ const DetalhesSolicitacaoDeAnalise = () => {
                         ))
                     }
                 </div>
-                <button onClick={() => gerarRelatorio()}>Gerar Relatório</button>
             </div>
         </>
     )

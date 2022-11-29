@@ -47,7 +47,6 @@ const CadastrarSolicitacaoDeAnalise = () => {
             <div className='cadastrarsolicitacaodeanalise__container'>
                 <h2>Cadastrar Solicitação de Análise</h2>
                 <h3>Informe abaixo os dados da Solicitação de Análise</h3>
-                <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
                 <form onSubmit={(e) => onSubmit(e)} className="cadastrarsolicitacaodeanalise__form">
                     <div className="cadastrarsolicitacaodeanalise__form-input">
                         <label htmlFor="cnpj">CNPJ do Solicitante</label>
